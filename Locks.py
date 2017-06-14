@@ -18,13 +18,15 @@ def worker(num):
 threads = []
 num = Num()
 for i in range(15):
-    t = threading.Thread(target=worker, args=(num,))
-    threads.append(t)
+    """t = threading.Thread(target=worker, args=(num,))
+                threads.append(t)"""
     myName = "Thread " + str(i)
-    t.setName(myName)
-    t.start()
-
-for t in threads:
-    t.join()
-    print(t.getName(), "joined")
-print(num.counter)
+    print(myName)
+    ##This gives a different order
+    """t.setName(myName)
+                t.start()
+            
+            for t in threads:
+                t.join()
+                print(t.getName(), "joined")
+            print(num.counter)"""
